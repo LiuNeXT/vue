@@ -12,9 +12,11 @@
 <body>
     <div id="root">
         <h1 v-on:click="handleClick">{{msg}}</h1>
-        //等同于上面
+        <!-- //等同于上面 -->
         <h1 @click="handleClick">{{msg}}</h1>
     </div>
+
+    <!-- methods方法事件響應 -->
     <script>
         new Vue({
             el: "#root",
@@ -24,7 +26,7 @@
             methods: {
                 handleClick: function () {
                     this.msg = " Vue Demo"
-                    //alert(123)
+                    // alert(123)
                 }
             }
         })
