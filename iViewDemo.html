@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,28 @@
     <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
     <title>iViewDemo</title>
 </head>
+
 <body>
     <div id="app">
-        <i-button @click="show">Click Me!</i-button>
-        <Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
-        
+        <i-button @click="Click">Click Me!</i-button>
+        <!-- <Modal v-model="visible" title="Welcome">Welcome to iView</Modal> -->
+        <!-- v-moderl="状态词自定义" -->
+        <Modal v-model="statusable" title="Welcome">Welcome to iView</Modal>
+        <Icon type="logo-apple" size="32px" />
     </div>
     <script>
         new Vue({
-            el : '#app',
+            el: '#app',
             data: {
-                visible: false
+                statusable: false
             },
             methods: {
-                show: function(){
-                    this.visible = true;
+                Click: function () {
+                    this.statusable = true;
                 }
             },
         })
     </script>
 </body>
+
 </html>

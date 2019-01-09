@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/vue.js"></script>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        .inner{
+            height: 150px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="inner">
+        <p v-cloak>{{ msg }}</p>
+        <p v-text="msg2"></p>
+        <p v-text="msg3"></p>
+        <p v-html= "msg3" :title="msg2"></p>
+        <input type="button" value="按钮" :title="msg2" @click="click">
+        <input type="button" value="按钮" v-bind:title="msg2" v-on:click="click">
+        <input type="button" value="">
+        <input type="text" v-model="msg">
+        <input type="checkbox" name="" id="">
+        <input type="text" v-model="">
+        <select name="" id="">
+            <option value=""></option>
+
+        </select>
+    </div>
+    <script>
+        var vm = new Vue({
+            el : '#app',
+            data: {
+                msg : 'Hello Vue',
+                msg2:  'nihao nihao',
+                msg3: '<h1>我是标题，我是标题</h1>'
+            },
+            methods: {
+                click : function(){
+                    alert(123)
+                }
+            },
+        })
+    </script>
+</body>
+</html>
+
